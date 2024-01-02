@@ -38,7 +38,7 @@ function Cart() {
                   <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
                     <div className="flex w-full space-x-2 sm:space-x-4">
                       <img
-                        className="flex-shrink-0 object-cover w-20 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32"
+                        className="flex-shrink-0 object-cover w-20 h-20 rounded outline-none sm:w-32 sm:h-32"
                         src={item?.thumbnail}
                         alt="Polaroid camera"
                       />
@@ -116,14 +116,14 @@ function Cart() {
             <div className="flex justify-center space-x-4 mb-4 mt-10">
               <Link
                 to="/"
-                className="px-6 py-2 border rounded-md dark:border-violet-400"
+                className="px-6 py-2 border rounded-md"
               >
                 Back to shop
               </Link>
               {cartItems.length > 0 && (
                 <button
                   type="button"
-                  className="px-6 py-2 border rounded-md dark:bg-violet-400 dark:text-gray-900 dark:border-violet-400"
+                  className="px-6 py-2 border rounded-md"
                 >
                   Continue to Checkout
                 </button>
