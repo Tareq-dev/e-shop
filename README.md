@@ -30,3 +30,11 @@
 2. Login using the provided authentication process.
 3. Explore the protected home page with product listings, search, and filter options.
 4. Add products to the shopping cart using the "Add to Cart" button.
+
+## Home Page Demo
+
+![home](https://github.com/Tareq-dev/e-shop/assets/76741381/bab1395c-84f8-4c81-8179-463e016ec564)
+
+## Cart Page Demo
+
+![2](https://github.com/Tareq-dev/e-shop/assets/76741381/eb8a2c6b-5cd2-49a7-82bd-883561933427)
