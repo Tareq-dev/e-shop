@@ -1,23 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import Navbar from "./../components/Navbar";
 import { Link } from "react-router-dom";
 
 function Cart() {
-  const { cartItems } = useCart();
+  const { cartItems, removeFromCart } = useCart();
 
   const totalPrice = cartItems.reduce((total, item) => {
     const discountedPrice =
       item.price - (item.price * item.discountPercentage) / 100;
     return total + discountedPrice;
   }, 0);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <div>
       <Navbar />
       <div className="container mx-auto py-8">
         <div className="flex justify-center items-center">
-          <div className=" w-2/5">
-            <h2 className="text-xl font-semibold text-center">Your cart</h2>
+          <div className=" md:w-2/5 px-4">
+            <h2 className="font-semibold pt-6 text-2xl md:pb-14 text-center">
+              Your cart
+            </h2>
 
             {cartItems.length === 0 ? (
               <p className="text-2xl text-center text-sky-600 my-36">
@@ -53,6 +59,7 @@ function Cart() {
                           </div>
                           <div className="flex text-sm divide-x">
                             <button
+                              onClick={() => removeFromCart(item?.id)}
                               type="button"
                               className="flex items-center px-2 py-1 pl-0 space-x-1"
                             >
@@ -93,19 +100,19 @@ function Cart() {
               ))
             )}
             {cartItems.length > 0 && (
-              <div className="space-y-1 text-right">
-                <p>
+              <div className="space-y-1 text-right ">
+                <p className="text-2xl">
                   Total amount:
                   <span className="font-semibold ml-4">
                     ${Math.floor(totalPrice)}
                   </span>
                 </p>
-                <p className="text-sm dark:text-gray-400">
+                <p className="text-sm text-gray-500">
                   Not including taxes and shipping costs
                 </p>
               </div>
             )}
-            <div className="flex justify-center space-x-4 mt-4">
+            <div className="flex justify-center space-x-4 mb-4 mt-10">
               <Link
                 to="/"
                 className="px-6 py-2 border rounded-md dark:border-violet-400"

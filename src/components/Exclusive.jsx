@@ -43,14 +43,12 @@ function Exclusive() {
     setFilteredData(data);
   };
 
-
-
   return (
-    <div className="container mx-auto py-20 px-16">
-      <h2 className="text-4xl font-bold text-center mb-6">
+    <div className="container mx-auto py-20 px-4 md:px-20">
+      <h2 className="text-2xl md:text-4xl font-bold text-center mb-6">
         Exclusive products
       </h2>
-      <div className="flex justify-between mt-20">
+      <div className="md:flex justify-between mt-20">
         <div className="flex justify-center items-center mb-8">
           <input
             type="text"
@@ -86,7 +84,7 @@ function Exclusive() {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {filteredData.map((item) => (
           <Card
             key={item.id}
@@ -96,7 +94,7 @@ function Exclusive() {
       </div>
       <div className="flex justify-center mt-8">
         <button
-          className="px-4 py-2 bg-gray-300 text-black font-semibold rounded-md"
+          className="px-4 py-2 bg-gray-300 mt-16 text-black font-semibold rounded-md"
           onClick={handleClear}
         >
           Clear Filters

@@ -6,7 +6,7 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
-  console.log(cartItems);
+
   const addToCart = (item) => {
     setCartItems([...cartItems, item]);
     toast.success("Item added on cart!");
