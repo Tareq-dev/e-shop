@@ -39,10 +39,10 @@ function Navbar() {
             <Link to="/">Products</Link>
           </li>
           <li>
-            <Link to="/">Contact</Link>
+            <Link to="/">Contact Us</Link>
           </li>
           <li>
-            <Link to="#products">About</Link>
+            <Link to="#products">About Us</Link>
           </li>
         </ul>
         <div className="">
